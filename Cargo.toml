@@ -1,7 +1,24 @@
 [package]
-name = "padbox_core"
+name = "padbox"
 version = "0.1.0"
 edition = "2021"
 authors = ["ryota2357"]
+default-run = "padbox"
+description = "A CLI tool to quickly set up custom local playgrounds."
 
 [dependencies]
+chrono = "0.4.38"
+clap = { version = "4.5.20", features = ["derive"] }
+clap_complete = "4.5.36"
+colored = "2.1.0"
+globset = "0.4.15"
+ignore = "0.4.23"
+nix = { version = "0.29.0", features = ["user"] }
+rand = "0.8.5"
+strsim = "0.11.1"
+thiserror = "1.0.66"
+toml = "0.8.19"
+
+[profile.release]
+lto = true
+codegen-units = 1
